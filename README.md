@@ -1,4 +1,6 @@
-# Edge-Linking-using-Hough-Transform
+### EX NO : 08
+### DATE  : 20.05.2022
+# <p align="center">Edge-Linking-using-Hough-Transform</p>
 ## Aim:
 To write a Python program to detect the lines using Hough Transform.
 
@@ -17,9 +19,14 @@ Using Canny operator from cv2,detect the edges of the image.
 ### Step5:
 Using the HoughLinesP(),detect line co-ordinates for every points in the images.Using For loop,draw the lines on the found co-ordinates.Display the image.
 
+<br>
+<br>
+<br>
+<br>
+<br>
+
 ## Program:
 ```Python
-
 # Read image and convert it to grayscale image
 import cv2
 import numpy as np
@@ -43,31 +50,32 @@ plt.axis('off')
 
 
 # Find the edges in the image using canny detector and display
-
 edges = cv2.Canny(image, 120, 150)
 plt.imshow(edges)
 plt.title('EDGES')
 plt.axis('off')
 
 # Detect points that form a line using HoughLinesP
-
 lines=cv2.HoughLinesP(edges,1,np.pi/180,threshold=80,minLineLength=50,maxLineGap=250)
 
 
 # Draw lines on the image
-
 for line in lines:
     x1,y1,x2,y2=line[0]
     cv2.line(image,(x1,y1),(x2,y2),(0,0,205),2)
 
 # Display the result
-
 plt.imshow(image)
 plt.title('HOUGH')
 plt.axis('off')
-
-
 ```
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
 ## Output
 
 ### Input image and grayscale image
